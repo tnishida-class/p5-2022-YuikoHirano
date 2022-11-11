@@ -58,5 +58,6 @@ function setup(){
   // BLANK[5] 平均点の線を引きます
   stroke(0, 255, 0);
   line(0, 400-average*4, width,400-average*4 );
-
+  noStroke();
+  text(average.toPrecision(3), 0, 400-average*4);
 }
