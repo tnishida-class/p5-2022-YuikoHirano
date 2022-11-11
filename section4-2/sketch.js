@@ -16,14 +16,16 @@ function draw(){
     ellipse(b.x, b.y, b.size);
     b.x += b.vx;
     b.y += b.vy;
+   }
+   const b = { x: windowWidth/2, y:windowHeight/2 , size: random(50), vx: random(-5,5), vy: random(-5,5) };
+   balls.push(b);
   }
-}
 
 function mouseDragged(){
   const dx = mouseX - pmouseX;
   const dy = mouseY - pmouseY;
   if(mag(dx, dy) > 5){
-    const b = { x: mouseX, y: mouseY, size: 20, vx: dx, vy: dy };
+    const b = { x: mouseX, y: mouseY, size: random(150), vx: dx, vy: dy };
     balls.push(b);
   }
 }
