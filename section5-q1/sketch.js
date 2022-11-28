@@ -4,15 +4,18 @@
 function setup(){
   createCanvas(400, 400);
   background(255);
-  balloon("I love keyakizaka46");
+  balloon("I love keyakizaka46",100,100,0,250,0);
 }
 
-function balloon(t){
+function balloon(t,x,y,cr,cg,cb){
   let w = textWidth(t);
   let h = textAscent() + textDescent();
   let p = 2;
-  fill(0);
-  rect(0, 0, w + p * 2, h + p * 2);
-  fill(255);
-  text(t, p, h + p);
+  noStroke();
+  fill(cr,cg,cb);
+  rect(x, y, w+p*2, h+p*2);
+  fill(255,0,0);
+  text(t, x+p, y+h+p);
+  fill(cr,cg,cb);
+  triangle(x+30, y+h+p*2, x+30, y+h+25, x+50, y+h+p*2);
 }
